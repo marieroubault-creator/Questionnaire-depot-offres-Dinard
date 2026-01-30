@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Talents du quotidien à Dinard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  margin: 0;
+  background-color: #DBE3FF;
+  color: #1D1E3C;
+}
+.header {
+  background-color: white;
+  padding: 30px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.header .bubble1, .header .bubble2 {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+.header .bubble1 { width:150px; height:150px; background:#FFDE8C; top:-50px; left:-50px; }
+.header .bubble2 { width:120px; height:120px; background:#EB94C2; top:20px; right:-60px; }
+.header .text {
+  font-size:28px;
+  font-weight:700;
+  z-index:1;
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
+.container {
+  max-width:800px;
+  margin:40px auto;
+  padding:0 20px;
+  text-align:center;
+}
+.card {
+  background:#FFDE8C;
+  padding:22px;
+  border-radius:18px;
+  margin-bottom:22px;
+  text-align:left;
+}
+label { font-weight:500; display:block; margin-bottom:8px; }
+input, select, textarea {
+  width:100%;
+  padding:12px;
+  border-radius:10px;
+  border:none;
+}
+.row { display:flex; gap:10px; }
+.buttons {
+  margin-top:30px;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.btn {
+  background:#406BDE;
+  color:white;
+  padding:15px 30px;
+  border:none;
+  border-radius:30px;
+  font-size:16px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <div class="bubble1"></div>
+  <div class="bubble2"></div>
+  <div class="text">
+    <span>FRANCE TRAVAIL</span>
+    <span>En partenariat avec la Ville de Dinard</span>
+  </div>
+</div>
+
+<div class="container">
+<h1>Talents du quotidien à Dinard</h1>
+<p class="subtitle">Questionnaire pour déposer votre offre</p>
+
+<form id="jobForm">
+
+<div class="card">
+  <label>Nom de l'établissement</label>
+  <input type="text" name="etablissement">
+  <label>Mail du responsable</label>
+  <input type="email" name="responsable">
+</div>
+
+<div class="card">
+  <label>Intitulé du poste</label>
+  <input type="text" name="poste">
+</div>
+
+<div class="card">
+  <label>Contrat de travail</label>
+  <select name="contrat">
+    <option>CDI</option>
+    <option>CDD</option>
+    <option>Contrat saisonnier</option>
+  </select>
+</div>
+
+<div class="card">
+  <label>Durée du contrat</label>
+  <div class="row">
+    <input type="text" name="duree">
+    <select name="dureeType">
+      <option>Mois</option>
+      <option>Jours</option>
+    </select>
+  </div>
+</div>
+
+<div class="card">
+  <label>Durée hebdomadaire</label>
+  <input type="text" name="hebdo">
+</div>
+
+<div class="card">
+  <label>Description des missions</label>
+  <textarea name="missions"></textarea>
+</div>
+
+<div class="card">
+  <label>Salaire</label>
+  <input type="text" name="salaire">
+</div>
+
+<div class="buttons">
+  <button type="button" class="btn" id="downloadPDF">📄 Télécharger PDF</button>
+  <button type="button" class="btn" id="sendMail">✉️ Envoyer par mail</button>
+</div>
+
+<p style="font-size:13px;color:#555;">
+Le PDF est téléchargé sur votre ordinateur.  
+Merci de le joindre manuellement à votre mail.
+</p>
+
+</form>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+const { jsPDF } = window.jspdf;
+const form = document.getElementById('jobForm');
+
+document.getElementById('downloadPDF').addEventListener('click', () => {
+  const doc = new jsPDF();
+  let y = 20;
+  form.querySelectorAll('input, select, textarea').forEach(f => {
+    const label = f.previousElementSibling?.textContent || '';
+    doc.text(`${label} : ${f.value || '-'}`, 20, y);
+    y += 8;
+  });
+  doc.save('Offre_Talents_Dinard.pdf');
+});
+
+document.getElementById('sendMail').addEventListener('click', () => {
+  const email = 'marie.roubault@francetravail.fr';
+  navigator.clipboard.writeText(email);
+  alert(
+    "Adresse mail copiée : " + email +
+    "\n\nMerci de joindre le PDF téléchargé et d’envoyer votre mail."
+  );
+});
+</script>
+
+</body>
+</html>
