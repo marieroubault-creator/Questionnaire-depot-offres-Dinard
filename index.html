@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Talents du quotidien à Dinard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <style>
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      margin: 0;
+      background-color: #DBE3FF;
+      color: #1D1E3C;
+    }
+
+    /* Bandeau */
+    .header {
+      background-color: #406BDE;
+      color: white;
+      padding: 25px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+
+    /* Conteneur principal */
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: #1D1E3C;
+    }
+
+    .intro {
+      font-size: 16px;
+      margin-bottom: 40px;
+      line-height: 1.5;
+    }
+
+    /* Cartes formulaire */
+    .card {
+      background-color: #FFDE8C;
+      padding: 22px;
+      border-radius: 18px;
+      margin-bottom: 22px;
+      text-align: left;
+      box-shadow: 0 8px 20px rgba(29, 30, 60, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    label {
+      font-weight: 500;
+      display: block;
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    label svg {
+      width: 16px;
+      height: 16px;
+      vertical-align: middle;
+      margin-right: 6px;
+      color: #1D1E3C;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      font-size: 15px;
+      transition: all 0.25s ease-in-out;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      box-shadow: 0 4px 15px rgba(64, 107, 222, 0.5);
+      transform: scale(1.02);
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .row {
+      display: flex;
+      gap: 10px;
+    }
+
+    /* Boutons */
+    .btn {
+      background-color: #406BDE;
+      color: white;
+      padding: 15px 45px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(64, 107, 222, 0.4);
+      transition: background 0.25s ease;
+    }
+
+    .btn:hover {
+      background-color: #69408C;
+    }
+
+    @media (max-width: 600px) {
+      .row {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<div class="header" style="background-color:white; padding:30px; text-align:center; position:relative; overflow:hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border-radius:15px; display:flex; justify-content:center; align-items:center; gap:20px; flex-wrap:wrap;">
+
+  <!-- Bulles décoratives agrandies -->
+  <div style="position:absolute; width:150px; height:150px; background-color:#FFDE8C; border-radius:50%; top:-50px; left:-50px; opacity:0.5;"></div>
+  <div style="position:absolute; width:120px; height:120px; background-color:#EB94C2; border-radius:50%; top:20px; right:-60px; opacity:0.5;"></div>
+
+  <!-- Texte principal et partenariat sur la même ligne -->
+  <div style="position:relative; font-size:28px; font-weight:700; color:#1D1E3C; z-index:1; display:flex; align-items:center; gap:15px; flex-wrap:wrap;">
+    <span>FRANCE TRAVAIL</span>
+    <span>En partenariat avec la Ville de Dinard</span>
+  </div>
+
+</div>
+
+
+  <div class="container">
+    <h1>Talents du quotidien à Dinard</h1>
+    <p class="subtitle">Questionnaire pour déposer votre offre</p>
+
+    <p class="intro">
+      Les informations ci-dessous sont essentielles afin de pouvoir déposer votre offre
+      dans le cadre du <strong>forum Talents du quotidien à Dinard</strong>,
+      qui se tiendra le <strong>7 avril</strong>.
+    </p>
+
+    <form>
+
+      <!-- Intitulé du poste -->
+      <div class="card">
+        <label>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2-1.343-2-3-2z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 14c-4 0-6 2-6 4v2h12v-2c0-2-2-4-6-4z"/>
+          </svg>
+          Intitulé du poste
+        </label>
+        <input type="text">
+      </div>
+
+      <!-- Contrat de travail -->
+      <div class="card">
+        <label>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 12h6m2 0a2 2 0 110-4H7a2 2 0 110 4m0 0v6a2 2 0 002 2h6a2 2 0 002-2v-6"/>
+          </svg>
+          Contrat de travail
+        </label>
+        <select>
+          <option>CDI</option>
+          <option>CDD</option>
+          <option>Contrat saisonnier</option>
+        </select>
+      </div>
+
+      <!-- Durée du contrat -->
+      <div class="card">
+        <label>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 8v4l3 3m6 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          Durée du contrat
+        </label>
+        <div class="row">
+          <input type="text" placeholder="Durée">
+          <select>
+            <option>Mois</option>
+            <option>Jours</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Durée hebdomadaire -->
+      <div class="card">
+        <label>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M8 7V3m8 4V3M3 11h18M5 11v10h14V11"/>
+          </svg>
+          Durée hebdomadaire
+        </label>
+        <input type="text" placeholder="Ex : 35h">
+      </div>
+
+      <!-- Description des missions -->
+      <div class="card">
+        <label>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h7l5 5v11a2 2 0 01-2 2z"/>
+          </svg>
+          Description des missions
+        </label>
+        <textarea rows="4"></textarea>
+      </div>
+
+      <!-- Salaire -->
+      <div class="card">
+        <label>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2-1.343-2-3-2zM12 14c-4 0-6 2-6 4v2h12v-2c0-2-2-4-6-4z"/>
+          </svg>
+          Salaire
+        </label>
+        <input type="text" placeholder="Ex : 1800 € brut">
+      </div>
+
+<!-- Boutons côte à côte -->
+<div style="margin-top:40px; text-align:center; display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
+  
+  <button type="submit" class="btn"
+          formaction="mailto:maire.roubault@francetravail.fr"
+          formmethod="post"
+          enctype="text/plain">
+    Envoyer
+  </button>
+
+  <button type="button" class="btn" id="downloadPDF">
+    Télécharger PDF
+  </button>
+
+</div>
+
+
+  <!-- JS PDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>
+    document.getElementById('downloadPDF').addEventListener('click', () => {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      const fields = document.querySelectorAll('input, select, textarea');
+      let y = 20;
+
+      fields.forEach(field => {
+        const label = field.previousElementSibling?.textContent.trim() || "Champ";
+        const value = field.value || "-";
+        doc.text(`${label}: ${value}`, 20, y);
+        y += 10;
+      });
+
+      doc.save('Offre_Talents_Dinard.pdf');
+    });
+  </script>
+
+</body>
+</html>
